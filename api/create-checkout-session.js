@@ -18,13 +18,13 @@ export default async function handler(req, res) {
       customer_email: email,
       line_items: [
         {
-          price: process.env.STRIPE_PRICE_ID,
+          price: 'price_1U03lnCYj9VVWuao0aT0yJ5k',
           quantity: 1,
         },
       ],
       metadata: { userId },
-      success_url: `${process.env.PUBLIC_URL}/dashboard?upgraded=true`,
-      cancel_url: `${process.env.PUBLIC_URL}/dashboard`,
+      success_url: 'https://cashflow-tracker-weld.vercel.app/dashboard?upgraded=true',
+      cancel_url: 'https://cashflow-tracker-weld.vercel.app/dashboard',
     })
 
     res.status(200).json({ url: session.url })
